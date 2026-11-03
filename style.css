@@ -13,6 +13,10 @@
   --tag-move: #1d4ed8;
   --tag-shop: #9d174d;
   --tag-stay: #4b5563;
+  --mic-bg: #fde8ea; --mic-fg: #a10f26;
+  --ok-bg: #dcfce7; --ok-fg: #166534;
+  --info-bg: #dbeafe; --info-fg: #1e40af;
+  --warn-bg: #fef3c7; --warn-fg: #92400e;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -28,6 +32,10 @@
     --tag-move: #60a5fa;
     --tag-shop: #f472b6;
     --tag-stay: #9ca3af;
+    --mic-bg: #4a1820; --mic-fg: #ffb3bd;
+    --ok-bg: #133322; --ok-fg: #86efac;
+    --info-bg: #172a4a; --info-fg: #93c5fd;
+    --warn-bg: #3d2e0e; --warn-fg: #fcd34d;
   }
 }
 
@@ -120,3 +128,18 @@ tfoot td { font-weight: 700; border-bottom: 0; }
 .links a:hover { text-decoration: underline; }
 
 .foot { color: var(--muted); font-size: .8rem; padding-bottom: 32px; }
+
+/* Badges: Michelin + booking status */
+.badges { display: flex; flex-wrap: wrap; gap: 4px; margin: 3px 0 2px; }
+.badge {
+  display: inline-block; font-size: .72rem; line-height: 1.5; padding: 0 8px;
+  border-radius: 6px; font-weight: 600; white-space: nowrap;
+}
+.badge.mic { background: var(--mic-bg); color: var(--mic-fg); }
+.badge.bk-booked { background: var(--ok-bg); color: var(--ok-fg); }
+.badge.bk-bookable { background: var(--info-bg); color: var(--info-fg); }
+.badge.bk-ask { background: var(--warn-bg); color: var(--warn-fg); }
+.badge.bk-walkin { background: var(--line); color: var(--muted); }
+.legend { font-size: .8rem; color: var(--muted); margin: -4px 0 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.dim { color: var(--muted); }
+#food td { white-space: nowrap; }

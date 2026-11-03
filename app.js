@@ -4,6 +4,10 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const TAG_COLOR = { 美食: "--tag-food", 景點: "--tag-sight", 交通: "--tag-move", 購物: "--tag-shop", 住宿: "--tag-stay" };
 
+  const BOOK = { booked: "已預約", bookable: "可預訂", ask: "致電確認", walkin: "現場排隊" };
+  const bookBadge = (k) => (BOOK[k] ? `<span class="badge bk-${k}">${BOOK[k]}</span>` : "");
+  const micBadge = (m) => `<span class="badge mic">米芝蓮${esc(m)}</span>`;
+
   const store = {
     get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
@@ -34,6 +38,7 @@
               <time>${esc(it.time)}</time>
               <div>
                 <div class="t">${esc(it.title)}${it.tag ? `<span class="tag" style="color:var(${TAG_COLOR[it.tag] || "--muted"})">${esc(it.tag)}</span>` : ""}</div>
+                ${it.michelin || it.book ? `<div class="badges">${it.michelin ? micBadge(it.michelin) : ""}${bookBadge(it.book)}</div>` : ""}
                 ${it.note ? `<div class="n">${esc(it.note)}</div>` : ""}
               </div>
             </li>`).join("")}
@@ -52,13 +57,17 @@
   const saved = store.get("hk-trip:day");
   showDay(Number.isInteger(saved) && saved < T.days.length ? saved : 0);
 
-  // Budget
-  const fmt = (n) => `${T.currency} ${Number(n || 0).toLocaleString()}`;
-  $("budget").tBodies[0].innerHTML = T.budget
-    .map((b) => `<tr><td>${esc(b.item)}</td><td class="num">${fmt(b.amount)}</td><td>${esc(b.note)}</td></tr>`)
+  // Food list
+  $("food").tBodies[0].innerHTML = (T.food || [])
+    .map((f) => `<tr>
+      <td>${esc(f.cat)}</td>
+      <td><strong>${esc(f.name)}</strong></td>
+      <td>${esc(f.area)}</td>
+      <td>${f.michelin ? micBadge(f.michelin) : '<span class="dim">—</span>'}</td>
+      <td>${bookBadge(f.book)}</td>
+      <td>${esc(f.day)}</td>
+    </tr>`)
     .join("");
-  const total = T.budget.reduce((s, b) => s + Number(b.amount || 0), 0);
-  $("budget").tFoot.innerHTML = `<tr><td>合計</td><td class="num">${fmt(total)}</td><td></td></tr>`;
 
   // Checklist (state kept only in this browser)
   const checked = new Set(store.get("hk-trip:checked") || []);
