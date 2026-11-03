@@ -107,7 +107,7 @@ window.TRIP = {
 
   checklist: [
     "護照（效期 6 個月以上）",
-    "網上快證（台灣居民預辦入境登記，免費）：出發前在 GovHK 申請並列印通知書隨身攜帶；持有效台胞證者免辦",
+    "台胞證（效期須涵蓋旅程，持有效台胞證入境免辦網上快證）",
     "確認去程專車的集合地點與聯絡方式",
     "預購山頂纜車票（01/23 09:00 時段）",
     "預購機場快綫車票（01/24 九龍站 → 機場）",
@@ -140,7 +140,6 @@ window.TRIP = {
     { label: "山頂纜車", url: "https://www.thepeak.com.hk/" },
     { label: "天星小輪", url: "https://www.starferry.com.hk/" },
     { label: "旅發局：活動一覽", url: "https://www.discoverhongkong.com/tc/what-s-new/events.html" },
-    { label: "網上快證（台灣居民預辦入境登記）", url: "https://www.immd.gov.hk/hkt/services/visas/pre-arrival_registration_for_taiwan_residents.html" },
     { label: "香港旅遊發展局", url: "https://www.discoverhongkong.com/" },
     { label: "香港國際機場", url: "https://www.hongkongairport.com/" },
   ],
