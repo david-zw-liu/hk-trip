@@ -1,0 +1,13 @@
+# 私人資料：訂位代碼、護照、聯絡方式等請放這裡，不會被 commit
+private/
+*.private.*
+*.local.*
+.env
+.env.*
+
+# 系統 / 編輯器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/

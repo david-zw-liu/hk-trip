@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>香港 3 天 2 夜</title>
+  <meta name="description" content="香港三天兩夜旅行規劃模板">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌃</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow" id="subtitle"></p>
+      <h1 id="title"></h1>
+      <p class="dates" id="dates"></p>
+      <dl class="overview" id="overview"></dl>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="行程日">
+    <div class="wrap" id="tabs" role="tablist"></div>
+  </nav>
+
+  <main class="wrap">
+    <section id="days" aria-live="polite"></section>
+
+    <section class="card">
+      <h2>預算</h2>
+      <div class="table-wrap">
+        <table id="budget">
+          <thead><tr><th>項目</th><th class="num">金額</th><th>備註</th></tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>行前清單</h2>
+        <ul class="checklist" id="checklist"></ul>
+        <p class="hint">勾選狀態只存在你自己的瀏覽器。</p>
+      </section>
+      <section class="card">
+        <h2>旅遊小提醒</h2>
+        <dl class="tips" id="tips"></dl>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>實用連結</h2>
+      <ul class="links" id="links"></ul>
+    </section>
+  </main>
+
+  <footer class="wrap foot">資訊僅供參考，出發前請再次確認交通與景點最新資訊。</footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
