@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 雙層巴士 -->
+  <rect x="6" y="8" width="52" height="42" rx="6" fill="#c8102e"/>
+  <rect x="6" y="29" width="52" height="3" fill="#8b0a1f"/>
+  <!-- 上層窗 -->
+  <rect x="11" y="13" width="9" height="11" rx="1.5" fill="#dff3ff"/>
+  <rect x="23" y="13" width="9" height="11" rx="1.5" fill="#dff3ff"/>
+  <rect x="35" y="13" width="9" height="11" rx="1.5" fill="#dff3ff"/>
+  <rect x="47" y="13" width="7" height="11" rx="1.5" fill="#dff3ff"/>
+  <!-- 下層窗 + 車門 -->
+  <rect x="11" y="35" width="9" height="9" rx="1.5" fill="#dff3ff"/>
+  <rect x="23" y="35" width="9" height="9" rx="1.5" fill="#dff3ff"/>
+  <rect x="35" y="35" width="9" height="9" rx="1.5" fill="#dff3ff"/>
+  <rect x="47" y="34" width="7" height="16" rx="1.5" fill="#dff3ff"/>
+  <!-- 輪子 -->
+  <circle cx="18" cy="52" r="6" fill="#1d1d1f"/>
+  <circle cx="18" cy="52" r="2.5" fill="#9a9a9e"/>
+  <circle cx="46" cy="52" r="6" fill="#1d1d1f"/>
+  <circle cx="46" cy="52" r="2.5" fill="#9a9a9e"/>
+</svg>
